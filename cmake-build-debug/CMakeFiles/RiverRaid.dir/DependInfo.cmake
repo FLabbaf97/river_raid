@@ -4,8 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/cygdrive/c/Users/Ashkar/ClionProjects/river_raid_logic/Item.cpp" "/cygdrive/c/Users/Ashkar/ClionProjects/river_raid_logic/cmake-build-debug/CMakeFiles/river_raid_logic.dir/Item.cpp.o"
-  "/cygdrive/c/Users/Ashkar/ClionProjects/river_raid_logic/main.cpp" "/cygdrive/c/Users/Ashkar/ClionProjects/river_raid_logic/cmake-build-debug/CMakeFiles/river_raid_logic.dir/main.cpp.o"
+  "/cygdrive/c/Users/Ashkar/ClionProjects/RiverRaid/main.cpp" "/cygdrive/c/Users/Ashkar/ClionProjects/RiverRaid/cmake-build-debug/CMakeFiles/RiverRaid.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

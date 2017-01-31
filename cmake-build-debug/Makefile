@@ -48,10 +48,10 @@ RM = /cygdrive/c/Users/Ashkar/.CLion2016.3/system/cygwin_cmake/bin/cmake.exe -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/c/Users/Ashkar/ClionProjects/river_raid_logic
+CMAKE_SOURCE_DIR = /cygdrive/c/Users/Ashkar/ClionProjects/RiverRaid
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/c/Users/Ashkar/ClionProjects/river_raid_logic/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/c/Users/Ashkar/ClionProjects/RiverRaid/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Ashkar/ClionProjects/river_raid_logic/cmake-build-debug/CMakeFiles /cygdrive/c/Users/Ashkar/ClionProjects/river_raid_logic/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Ashkar/ClionProjects/RiverRaid/cmake-build-debug/CMakeFiles /cygdrive/c/Users/Ashkar/ClionProjects/RiverRaid/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Ashkar/ClionProjects/river_raid_logic/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Ashkar/ClionProjects/RiverRaid/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named river_raid_logic
+# Target rules for targets named RiverRaid
 
 # Build rule for target.
-river_raid_logic: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 river_raid_logic
-.PHONY : river_raid_logic
+RiverRaid: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 RiverRaid
+.PHONY : RiverRaid
 
 # fast build rule for target.
-river_raid_logic/fast:
-	$(MAKE) -f CMakeFiles/river_raid_logic.dir/build.make CMakeFiles/river_raid_logic.dir/build
-.PHONY : river_raid_logic/fast
+RiverRaid/fast:
+	$(MAKE) -f CMakeFiles/RiverRaid.dir/build.make CMakeFiles/RiverRaid.dir/build
+.PHONY : RiverRaid/fast
 
 main.o: main.cpp.o
 
@@ -129,7 +129,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/river_raid_logic.dir/build.make CMakeFiles/river_raid_logic.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/RiverRaid.dir/build.make CMakeFiles/RiverRaid.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -138,7 +138,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/river_raid_logic.dir/build.make CMakeFiles/river_raid_logic.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/RiverRaid.dir/build.make CMakeFiles/RiverRaid.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -147,7 +147,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/river_raid_logic.dir/build.make CMakeFiles/river_raid_logic.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/RiverRaid.dir/build.make CMakeFiles/RiverRaid.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -158,7 +158,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... river_raid_logic"
+	@echo "... RiverRaid"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

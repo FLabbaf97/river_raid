@@ -1,9 +1,14 @@
+//
+// Created by Ashkar on 1/31/2017.
+//
+
 #include <iostream>
 #include <vector>
 #define WIDTH 800
 #define HEIGHT 600
 using namespace std;
-//////commmmment
+//comment to test pulling
+
 enum class Type{helicopter = 60 , nave  = 30, baloon  = 60 , jet = 100, fueldepot = 150};
 
 class Item{
@@ -15,7 +20,7 @@ public:
     bool collide(int x , int y);
 };
 
-class PLayer :public Item{
+class PLayer:public Item{
     int fuel_rate;
 public:
     PLayer(int x, int y, int height, int width) : Item(x, y, height, width) {fuel_rate = 100;}
@@ -68,3 +73,6 @@ public:
     ~Scene();
 };
 
+int main(){
+    /////
+}

@@ -54,45 +54,45 @@ RM = /cygdrive/c/Users/Ashkar/.CLion2016.3/system/cygwin_cmake/bin/cmake.exe -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/c/Users/Ashkar/ClionProjects/river_raid_logic
+CMAKE_SOURCE_DIR = /cygdrive/c/Users/Ashkar/ClionProjects/RiverRaid
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/c/Users/Ashkar/ClionProjects/river_raid_logic/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/c/Users/Ashkar/ClionProjects/RiverRaid/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/river_raid_logic.dir
+# Target rules for target CMakeFiles/RiverRaid.dir
 
 # All Build rule for target.
-CMakeFiles/river_raid_logic.dir/all:
-	$(MAKE) -f CMakeFiles/river_raid_logic.dir/build.make CMakeFiles/river_raid_logic.dir/depend
-	$(MAKE) -f CMakeFiles/river_raid_logic.dir/build.make CMakeFiles/river_raid_logic.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/c/Users/Ashkar/ClionProjects/river_raid_logic/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target river_raid_logic"
-.PHONY : CMakeFiles/river_raid_logic.dir/all
+CMakeFiles/RiverRaid.dir/all:
+	$(MAKE) -f CMakeFiles/RiverRaid.dir/build.make CMakeFiles/RiverRaid.dir/depend
+	$(MAKE) -f CMakeFiles/RiverRaid.dir/build.make CMakeFiles/RiverRaid.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/cygdrive/c/Users/Ashkar/ClionProjects/RiverRaid/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target RiverRaid"
+.PHONY : CMakeFiles/RiverRaid.dir/all
 
 # Include target in all.
-all: CMakeFiles/river_raid_logic.dir/all
+all: CMakeFiles/RiverRaid.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/river_raid_logic.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Ashkar/ClionProjects/river_raid_logic/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/river_raid_logic.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Ashkar/ClionProjects/river_raid_logic/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/river_raid_logic.dir/rule
+CMakeFiles/RiverRaid.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Ashkar/ClionProjects/RiverRaid/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/RiverRaid.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Ashkar/ClionProjects/RiverRaid/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/RiverRaid.dir/rule
 
 # Convenience name for target.
-river_raid_logic: CMakeFiles/river_raid_logic.dir/rule
+RiverRaid: CMakeFiles/RiverRaid.dir/rule
 
-.PHONY : river_raid_logic
-
-# clean rule for target.
-CMakeFiles/river_raid_logic.dir/clean:
-	$(MAKE) -f CMakeFiles/river_raid_logic.dir/build.make CMakeFiles/river_raid_logic.dir/clean
-.PHONY : CMakeFiles/river_raid_logic.dir/clean
+.PHONY : RiverRaid
 
 # clean rule for target.
-clean: CMakeFiles/river_raid_logic.dir/clean
+CMakeFiles/RiverRaid.dir/clean:
+	$(MAKE) -f CMakeFiles/RiverRaid.dir/build.make CMakeFiles/RiverRaid.dir/clean
+.PHONY : CMakeFiles/RiverRaid.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/RiverRaid.dir/clean
 
 .PHONY : clean
 

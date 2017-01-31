@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/river_raid_logic.iml" filepath="$PROJECT_DIR$/.idea/river_raid_logic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/RiverRaid.iml" filepath="$PROJECT_DIR$/.idea/RiverRaid.iml" />
     </modules>
   </component>
 </project>

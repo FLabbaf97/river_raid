@@ -1,0 +1,1 @@
+/usr/bin/c++.exe  -g  -Wl,--enable-auto-import CMakeFiles/RiverRaid.dir/main.cpp.o  -o RiverRaid.exe -Wl,--out-implib,libRiverRaid.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

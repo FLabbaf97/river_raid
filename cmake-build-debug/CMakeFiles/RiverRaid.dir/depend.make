@@ -1,2 +1,2 @@
-# Empty dependencies file for river_raid_logic.
+# Empty dependencies file for RiverRaid.
 # This may be replaced when dependencies are built.
