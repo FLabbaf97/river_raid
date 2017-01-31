@@ -3,7 +3,7 @@
 #define WIDTH 800
 #define HEIGHT 600
 using namespace std;
-
+//////commmmment
 enum class Type{helicopter = 60 , nave  = 30, baloon  = 60 , jet = 100, fueldepot = 150};
 
 class Item{
@@ -12,9 +12,10 @@ protected:
 public:
     Item(int x , int y , int height , int width) : x(x) , y(y) , height(height) , width (width) {}
     virtual void show() = 0;
+    bool collide(int x , int y);
 };
 
-class PLayer:public Item{
+class PLayer :public Item{
     int fuel_rate;
 public:
     PLayer(int x, int y, int height, int width) : Item(x, y, height, width) {fuel_rate = 100;}
