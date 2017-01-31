@@ -1,3 +1,0 @@
-/cygdrive/c/Users/Ashkar/Desktop/project/cmake-build-debug/CMakeFiles/edit_cache.dir
-/cygdrive/c/Users/Ashkar/Desktop/project/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/cygdrive/c/Users/Ashkar/Desktop/project/cmake-build-debug/CMakeFiles/project.dir
