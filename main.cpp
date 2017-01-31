@@ -30,7 +30,7 @@ public:
     void move_right();
     void move_left();
     virtual void show();
-    ~player();
+    ~Player();
 };
 
 class Enemy : public Item{/// if it collided with the player, scene checks if it's fuel depot or not

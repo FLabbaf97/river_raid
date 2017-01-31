@@ -48,10 +48,10 @@ RM = /cygdrive/c/Users/Ashkar/.CLion2016.3/system/cygwin_cmake/bin/cmake.exe -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /cygdrive/c/Users/Ashkar/ClionProjects/RiverRaid
+CMAKE_SOURCE_DIR = /cygdrive/c/Users/Ashkar/Desktop/project
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /cygdrive/c/Users/Ashkar/ClionProjects/RiverRaid/cmake-build-debug
+CMAKE_BINARY_DIR = /cygdrive/c/Users/Ashkar/Desktop/project/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Ashkar/ClionProjects/RiverRaid/cmake-build-debug/CMakeFiles /cygdrive/c/Users/Ashkar/ClionProjects/RiverRaid/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Ashkar/Desktop/project/cmake-build-debug/CMakeFiles /cygdrive/c/Users/Ashkar/Desktop/project/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Ashkar/ClionProjects/RiverRaid/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /cygdrive/c/Users/Ashkar/Desktop/project/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,125 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named RiverRaid
+# Target rules for targets named project
 
 # Build rule for target.
-RiverRaid: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 RiverRaid
-.PHONY : RiverRaid
+project: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 project
+.PHONY : project
 
 # fast build rule for target.
-RiverRaid/fast:
-	$(MAKE) -f CMakeFiles/RiverRaid.dir/build.make CMakeFiles/RiverRaid.dir/build
-.PHONY : RiverRaid/fast
+project/fast:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/build
+.PHONY : project/fast
+
+CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.o: CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.c.o
+
+.PHONY : CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.o
+
+# target to build an object file
+CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.c.o:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.c.o
+.PHONY : CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.c.o
+
+CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.i: CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.c.i
+
+.PHONY : CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.i
+
+# target to preprocess a source file
+CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.c.i:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.c.i
+.PHONY : CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.c.i
+
+CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.s: CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.c.s
+
+.PHONY : CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.s
+
+# target to generate assembly for a file
+CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.c.s:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.c.s
+.PHONY : CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.c.s
+
+CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.o: CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o
+
+.PHONY : CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.o
+
+# target to build an object file
+CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o
+.PHONY : CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.o
+
+CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.i: CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.i
+
+.PHONY : CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.i
+
+# target to preprocess a source file
+CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.i:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.i
+.PHONY : CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.i
+
+CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.s: CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
+
+.PHONY : CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.s
+
+# target to generate assembly for a file
+CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.s:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
+.PHONY : CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.s
+
+CMakeFiles/feature_tests.o: CMakeFiles/feature_tests.c.o
+
+.PHONY : CMakeFiles/feature_tests.o
+
+# target to build an object file
+CMakeFiles/feature_tests.c.o:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/CMakeFiles/feature_tests.c.o
+.PHONY : CMakeFiles/feature_tests.c.o
+
+CMakeFiles/feature_tests.i: CMakeFiles/feature_tests.c.i
+
+.PHONY : CMakeFiles/feature_tests.i
+
+# target to preprocess a source file
+CMakeFiles/feature_tests.c.i:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/CMakeFiles/feature_tests.c.i
+.PHONY : CMakeFiles/feature_tests.c.i
+
+CMakeFiles/feature_tests.s: CMakeFiles/feature_tests.c.s
+
+.PHONY : CMakeFiles/feature_tests.s
+
+# target to generate assembly for a file
+CMakeFiles/feature_tests.c.s:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/CMakeFiles/feature_tests.c.s
+.PHONY : CMakeFiles/feature_tests.c.s
+
+CMakeFiles/feature_tests.o: CMakeFiles/feature_tests.cxx.o
+
+.PHONY : CMakeFiles/feature_tests.o
+
+# target to build an object file
+CMakeFiles/feature_tests.cxx.o:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/CMakeFiles/feature_tests.cxx.o
+.PHONY : CMakeFiles/feature_tests.cxx.o
+
+CMakeFiles/feature_tests.i: CMakeFiles/feature_tests.cxx.i
+
+.PHONY : CMakeFiles/feature_tests.i
+
+# target to preprocess a source file
+CMakeFiles/feature_tests.cxx.i:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/CMakeFiles/feature_tests.cxx.i
+.PHONY : CMakeFiles/feature_tests.cxx.i
+
+CMakeFiles/feature_tests.s: CMakeFiles/feature_tests.cxx.s
+
+.PHONY : CMakeFiles/feature_tests.s
+
+# target to generate assembly for a file
+CMakeFiles/feature_tests.cxx.s:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/CMakeFiles/feature_tests.cxx.s
+.PHONY : CMakeFiles/feature_tests.cxx.s
 
 main.o: main.cpp.o
 
@@ -129,7 +237,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/RiverRaid.dir/build.make CMakeFiles/RiverRaid.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -138,7 +246,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/RiverRaid.dir/build.make CMakeFiles/RiverRaid.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -147,7 +255,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/RiverRaid.dir/build.make CMakeFiles/RiverRaid.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -158,7 +266,19 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... RiverRaid"
+	@echo "... project"
+	@echo "... CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.o"
+	@echo "... CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.i"
+	@echo "... CMakeFiles/3.6.2/CompilerIdC/CMakeCCompilerId.s"
+	@echo "... CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.o"
+	@echo "... CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.i"
+	@echo "... CMakeFiles/3.6.2/CompilerIdCXX/CMakeCXXCompilerId.s"
+	@echo "... CMakeFiles/feature_tests.o"
+	@echo "... CMakeFiles/feature_tests.i"
+	@echo "... CMakeFiles/feature_tests.s"
+	@echo "... CMakeFiles/feature_tests.o"
+	@echo "... CMakeFiles/feature_tests.i"
+	@echo "... CMakeFiles/feature_tests.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
