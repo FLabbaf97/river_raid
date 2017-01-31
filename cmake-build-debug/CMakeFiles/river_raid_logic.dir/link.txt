@@ -1,1 +1,0 @@
-/usr/bin/c++.exe  -g  -Wl,--enable-auto-import CMakeFiles/river_raid_logic.dir/main.cpp.o  -o river_raid_logic.exe -Wl,--out-implib,libriver_raid_logic.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
