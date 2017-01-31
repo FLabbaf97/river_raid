@@ -12,6 +12,7 @@ protected:
 public:
     Item(int x , int y , int height , int width) : x(x) , y(y) , height(height) , width (width) {}
     virtual void show() = 0;
+    bool collide(int x , int y);
 };
 
 class PLayer:public Item{
