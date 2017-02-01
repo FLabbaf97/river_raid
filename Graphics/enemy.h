@@ -11,6 +11,7 @@ public:
     enemy();
 public slots:
     void move();
+//    ~enemy();
 //    void spawn();
 };
 

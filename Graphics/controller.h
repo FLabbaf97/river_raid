@@ -7,10 +7,10 @@
 #include "Player.h"
 #include "score.h"
 #include "fuel.h"
-class Contrioller : public QGraphicsView
+class controller : public QGraphicsView
 {
 public:
-    Contrioller(QWidget* parent = 0);
+    controller(QWidget* parent = 0);
     QGraphicsScene* scene;
     Player* player;
     Score* score;
