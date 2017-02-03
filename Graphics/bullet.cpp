@@ -13,7 +13,7 @@ Bullet::Bullet()
     QTimer* timer = new QTimer();
 
     connect (timer , SIGNAL(timeout()) , this , SLOT(move()));
-    timer->start(50);
+    timer->start(50); // 50 ms
 }
 
 void Bullet::move()
@@ -22,7 +22,7 @@ void Bullet::move()
     if(pos().y() < 0){
         scene()->removeItem(this);
         delete this;
-        qDebug() << "deleted";
+        qDebug() << "Bullet deleted";
     }
 }
 
