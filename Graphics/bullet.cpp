@@ -2,6 +2,8 @@
 #include <QTimer>
 #include <QDebug>
 #include <QGraphicsScene>
+#include <QList>
+#include "enemy.h"
 
 Bullet::Bullet()
 {
@@ -16,13 +18,36 @@ Bullet::Bullet()
     timer->start(50); // 50 ms
 }
 
-void Bullet::move()
+bool Bullet::check_collision()
 {
-    setPos(x() , y()-10);
-    if(pos().y() < 0){
-        scene()->removeItem(this);
-        delete this;
-        qDebug() << "Bullet deleted";
+    QList <QGraphicsItem* > colliding_items = collidingItems();
+    for(int i = 0; i < colliding_items.size(); i++){
+        if(typeid(*(colliding_items[i])) == typeid(enemy)){
+            //delete them
+            scene()->removeItem(colliding_items[i]);
+            scene()->removeItem(this);
+            delete colliding_items[i];
+            delete this;
+            return true;
+            qDebug() << "enemy deleted by colliding with bullet";
+            qDebug () << "bullet deleted by colliding with enemy";
+        }
     }
+    return false;
 }
 
+void Bullet::move()
+{
+    if(check_collision() == false){
+        setPos(x() , y()-10);
+        if(pos().y() < 0){
+            scene()->removeItem(this);
+            delete this;
+            qDebug() << "Bullet deleted by getting out of scene";
+        }
+    }
+    else{
+            qDebug( ) << "bullet collided with enemy";
+            return;
+    }
+}

@@ -4,7 +4,7 @@
 #include <QTimer>
 #include <enemy.h>
 #include <QVector>
-#include <bullet.h>
+#include "bullet.h"
 controller::controller()
 {
     //creat scene
@@ -32,7 +32,7 @@ controller::controller()
 
 
     // fix the view and set position of player
-    view->setFixedSize(800 , 600);
+    view->setFixedSize(900 , 700);
     scene->setSceneRect(0 , 0 ,800 , 600);
     player->setPos(view->width()/2 , view->height()  - 100);
 
