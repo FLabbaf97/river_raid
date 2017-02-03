@@ -7,7 +7,7 @@ class Bullet : public QObject  , public QGraphicsRectItem
     Q_OBJECT
 public:
     Bullet();
-    bool check_collision();
+//    bool check_collision();
 public slots:
     void move();
 };

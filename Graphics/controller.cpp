@@ -4,6 +4,7 @@
 #include <QTimer>
 #include <enemy.h>
 #include <QVector>
+#include <typeinfo>
 #include "bullet.h"
 controller::controller()
 {
@@ -32,7 +33,7 @@ controller::controller()
 
 
     // fix the view and set position of player
-    view->setFixedSize(900 , 700);
+    view->setFixedSize(800 , 600);
     scene->setSceneRect(0 , 0 ,800 , 600);
     player->setPos(view->width()/2 , view->height()  - 100);
 
@@ -43,7 +44,7 @@ controller::controller()
     timer2->start(2000);
     QTimer* timer3 = new QTimer;
     controller::connect(timer3 , SIGNAL(timeout()) , this , SLOT(routine()));
-    timer3->start(50);
+    timer3->start(10);
     show();
 }
 
@@ -57,31 +58,65 @@ void controller::create_enemy()
 void controller::routine()
 {
     fuel->decrease();
+
+
     for(int i = 0; i < enemies.size() ; i++){
-        if(enemies[i]->y() > 600){
-            scene->removeItem(enemies[i]);
-            delete enemies[i];
-            enemies.erase(enemies.begin() + i);
-            break;
+        if(enemies.at(i)->y() > 600){
+                    scene->removeItem(enemies.at(i));
+                    delete enemies.at(i);
+                    enemies.erase(enemies.begin() + i);
+                    break;
         }
-        if(enemies[i]->collidesWithItem(player)){
-
-            if(enemies[i]->get_type() == 4){////was a fule depot
-                fuel->increase();
-                qDebug()<< "collision with fuel depot";
-                continue;
+        QList <QGraphicsItem* > colliding_items = enemies.at(i)->collidingItems();
+        for(int j = 0; j < colliding_items.size(); j++){
+            if(typeid(*(colliding_items.at(j))) == typeid(Bullet)){
+                score->increase(enemies.at(i)->getval());
+                scene->removeItem(colliding_items.at(j));
+                scene->removeItem(enemies.at(i));
+                delete colliding_items.at(j);
+                colliding_items.erase(colliding_items.begin()+j);
+                delete enemies.at(i);
+                enemies.erase(enemies.begin() + i);
+                qDebug() << "enemy deleted by a shot";
+                qDebug() << "bullet deleted bo colliding na enemy";
+                break;
             }
-            qDebug() << "collision with enemy";
-            scene->removeItem(enemies[i]);
-            delete enemies[i];
-            enemies.erase(enemies.begin() + i);
+            if(typeid(*(colliding_items.at(j))) == typeid(Player)){
+                if(enemies.at(i)->get_type() == 4)///fuel depot
+                {
+                    fuel->increase();
+                    qDebug() << "fuel depot!";
+                    break;
+                }
+                scene->removeItem(enemies.at(i));
+                delete enemies.at(i);
+                enemies.erase(enemies.begin()+i);
+                qDebug() << "player collided with enemy";
 
-            break;
-        }
+            }
+         }
+
+//        if(enemies.at(i)->y() > 600){
+//            scene->removeItem(enemies.at(i));
+//            delete enemies.at(i);
+//            enemies.erase(enemies.begin() + i);
+//            break;
+//        }
+//        else if(enemies.at(i)->collidesWithItem(player)){
+
+//            if(enemies.at(i)->get_type() == 4){////was a fule depot
+//                fuel->increase();
+//                qDebug()<< "collision with fuel depot";
+//                break;
+//            }
+//            qDebug() << "collision with enemy";
+//            scene->removeItem(enemies.at(i));
+//            delete enemies.at(i);
+//            enemies.erase(enemies.begin() + i);
+
+//            break;
+//        }
     }
-    //    for(/*int i = 0 ; i < enemies.size(); i++){
-    //        if(enemies[i]->collidesWithItem(Bullet)){
-    //            qDebug() << "collsion with Bullet";
-    //        }
-    //    }*/
+
+
 }
