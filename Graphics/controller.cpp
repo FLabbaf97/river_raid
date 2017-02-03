@@ -32,7 +32,7 @@ controller::controller()
 
 
     // fix the view and set position of player
-    view->setFixedSize(900 , 700);
+    view->setFixedSize(800 , 600);
     scene->setSceneRect(0 , 0 ,800 , 600);
     player->setPos(view->width()/2 , view->height()  - 100);
 
