@@ -14,21 +14,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
     bullet.cpp \
-    contrioller.cpp \
     enemy.cpp \
     fuel.cpp \
     score.cpp \
-    Player.cpp
+    Player.cpp \
+    controller.cpp
 
 HEADERS  += \
-    balloon.h \
     bullet.h \
     controller.h \
     enemy.h \
     fuel.h \
-    fueldepot.h \
-    helicopter.h \
-    jet.h \
     score.h \
-    nave.h \
     Player.h

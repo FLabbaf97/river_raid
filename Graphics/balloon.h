@@ -1,4 +1,4 @@
-#ifndef BALLOON_H
+ifndef BALLOON_H
 #define BALLOON_H
 
 #include "enemy.h"

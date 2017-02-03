@@ -4,11 +4,19 @@
 #include <QDebug>
 #include <QObject>
 #include <QGraphicsRectItem>
+
+enum Type{helicopter , Nave , balloon , Jet , Fuel_depot};
+
+
 class enemy : public QObject ,  public QGraphicsRectItem
 {
     Q_OBJECT
+    int type;
+    int val;
 public:
-    enemy();
+    int getval();
+    int get_type();
+    enemy(int);
 public slots:
     void move();
 //    ~enemy();

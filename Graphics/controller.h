@@ -5,19 +5,24 @@
 #include <QWidget>
 #include <QGraphicsView>
 #include "Player.h"
+#include <enemy.h>
 #include "score.h"
+#include <QVector>
 #include "fuel.h"
 class controller : public QGraphicsView
 {
+    Q_OBJECT
 public:
-    controller(QWidget* parent = 0);
+    controller();
     QGraphicsScene* scene;
     Player* player;
+    QVector<enemy*> enemies;
     Score* score;
     Fuel* fuel;
 
-//public slots:
-//    void show(QGraphicsView* view);
+public slots:
+    void create_enemy();
+    void routine();
 };
 
 #endif // CONTRIOLLER_H
