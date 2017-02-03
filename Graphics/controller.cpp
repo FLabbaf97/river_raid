@@ -44,7 +44,7 @@ controller::controller()
     timer2->start(2000);
     QTimer* timer3 = new QTimer;
     controller::connect(timer3 , SIGNAL(timeout()) , this , SLOT(routine()));
-    timer3->start(10);
+    timer3->start(50);
     show();
 }
 
