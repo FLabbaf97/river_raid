@@ -13,7 +13,7 @@ controller::controller()
     setScene(scene);
     //creat player
     player = new Player;
-    player->setRect(0 , 0 , 100 , 50);
+
     //creat score & fuel
     score = new Score;
     fuel = new Fuel;
@@ -59,7 +59,7 @@ void controller::routine()
 {
     fuel->decrease();
 
-
+    //check if any enemies get out of scene or collide, delete it
     for(int i = 0; i < enemies.size() ; i++){
         if(enemies.at(i)->y() > 600){
                     scene->removeItem(enemies.at(i));
@@ -67,6 +67,7 @@ void controller::routine()
                     enemies.erase(enemies.begin() + i);
                     break;
         }
+        //check if each item colliding with bullet
         QList <QGraphicsItem* > colliding_items = enemies.at(i)->collidingItems();
         for(int j = 0; j < colliding_items.size(); j++){
             if(typeid(*(colliding_items.at(j))) == typeid(Bullet)){
@@ -82,13 +83,14 @@ void controller::routine()
                 break;
             }
             if(typeid(*(colliding_items.at(j))) == typeid(Player)){
-                if(enemies.at(i)->get_type() == 4)///fuel depot
+                if(enemies.at(i)->get_type() == 4)//fuel depot
                 {
                     fuel->increase();
-                    qDebug() << "fuel depot!";
+                    qDebug() << "pass from fuel depot!";
                     break;
                 }
                 scene->removeItem(enemies.at(i));
+                scene->removeItem(player);
                 delete enemies.at(i);
                 enemies.erase(enemies.begin()+i);
                 qDebug() << "player collided with enemy";

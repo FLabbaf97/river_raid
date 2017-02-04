@@ -4,6 +4,11 @@
 #include "bullet.h"
 #include "enemy.h"
 
+Player::Player()
+{
+    setPixmap(QPixmap(":/fig/plane.svg"));
+}
+
 void Player::keyPressEvent(QKeyEvent *event)
 {
     if(event->key() == Qt:: Key_Left)

@@ -1,4 +1,4 @@
-#ifndef CONTRIOLLER_H
+ #ifndef CONTRIOLLER_H
 #define CONTRIOLLER_H
 //#include <QObject>
 #include <QGraphicsScene>

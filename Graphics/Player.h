@@ -2,12 +2,14 @@
 #define PLAYER_H
 #include <QDebug>
 #include <QKeyEvent>
-#include <QGraphicsRectItem>
+#include <QGraphicsPixmapItem>
 #include <QObject>
-
-class Player :public QObject ,  public QGraphicsRectItem
+#include<QImage>
+class Player :public QObject ,  public QGraphicsPixmapItem
 {
+
 public:
+   Player();
     void keyPressEvent(QKeyEvent* event);
 };
 

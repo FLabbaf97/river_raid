@@ -27,3 +27,6 @@ HEADERS  += \
     fuel.h \
     score.h \
     Player.h
+
+RESOURCES += \
+    res.qrc
