@@ -4,6 +4,8 @@
 #include <QDebug>
 #include <QObject>
 #include <QGraphicsRectItem>
+#include <QGraphicsItem>
+#include <QGraphicsPixmapItem>
 
 enum Type{helicopter , Nave , balloon , Jet , Fuel_depot};
 

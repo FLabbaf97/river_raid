@@ -4,6 +4,12 @@
 #include "bullet.h"
 #include "enemy.h"
 
+Player::Player()
+{
+
+    this->setPixmap(QPixmap(":/images/fig/airplane.png"));
+}
+
 void Player::keyPressEvent(QKeyEvent *event)
 {
     if(event->key() == Qt:: Key_Left)

@@ -19,6 +19,7 @@ int enemy::get_type()
 enemy::enemy(int t)
 {
     type = t;
+
     val = values[(int)t];
     if(t == 0)
         setBrush(*new QBrush(Qt::black));

@@ -4,10 +4,12 @@
 #include <QKeyEvent>
 #include <QGraphicsRectItem>
 #include <QObject>
+#include <QGraphicsPixmapItem>
 
-class Player :public QObject ,  public QGraphicsRectItem
+class Player :public QObject ,  public QGraphicsPixmapItem
 {
 public:
+    Player();
     void keyPressEvent(QKeyEvent* event);
 };
 
