@@ -18,7 +18,6 @@ public:
     QGraphicsScene* scene;
     Player* player;
     QVector<enemy*> enemies;
-//    QVector<Bullet*> bullets;
     Score* score;
     Fuel* fuel;
 

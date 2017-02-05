@@ -12,6 +12,7 @@ enum Type{helicopter , Nave , balloon , Jet , Fuel_depot};
 
 class enemy : public QObject ,  public QGraphicsPixmapItem
 {
+    static qreal rate;
     Q_OBJECT
     int type;
     int val;
@@ -21,8 +22,6 @@ public:
     enemy(int);
 public slots:
     void move();
-//    ~enemy();
-//    void spawn();
 };
 
 #endif // ENEMY_H

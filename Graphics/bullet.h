@@ -5,11 +5,14 @@
 class Bullet : public QObject  , public QGraphicsRectItem
 {
     Q_OBJECT
+    static qreal rate ;
 public:
     Bullet();
 //    bool check_collision();
 public slots:
     void move();
 };
+
+
 
 #endif // BULLET_H

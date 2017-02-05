@@ -5,7 +5,9 @@
 #include <enemy.h>
 #include <QVector>
 #include <typeinfo>
+#include <QThread>
 #include "bullet.h"
+
 controller::controller()
 {
     //creat scene
@@ -26,7 +28,7 @@ controller::controller()
     scene->addItem(fuel);
     scene->addItem(player);
     //back ground us blue!
-    scene->setBackgroundBrush(* new QBrush(Qt::green));
+    scene->setBackgroundBrush(* new QBrush(Qt::lightGray));
     // set focus on player
     player->setFlag(QGraphicsRectItem:: ItemIsFocusable);
     player->setFocus();
@@ -53,13 +55,32 @@ controller::controller()
 
 void controller::create_enemy()
 {
-    enemy* enemy1 = new enemy(rand()%5);
-    this->scene->addItem(enemy1);
-    enemies.push_back(enemy1);
+    int x = rand()%8;
+    qDebug() << x;
+    QVector <enemy*> temp;
+    for(int i = 0 ; i < x ; i++){
+        enemy* enemy1 = new enemy(rand()%5);
+        scene->addItem(enemy1);
+        bool flag = false;
+        for(int j = 0 ; j < temp.size() ; j++){
+            if(enemy1->collidesWithItem(temp[j])){
+                scene->removeItem(enemy1);
+                delete enemy1;
+                flag = true;
+                break;
+            }
+        }
+        if(!flag){
+            enemies.push_back(enemy1);
+            temp.push_back(enemy1);
+        }
+
+    }
 }
 
 void controller::routine()
 {
+    player->setZValue(1);
     fuel->decrease();
 
 
