@@ -84,18 +84,26 @@ void controller::routine()
                 qDebug() << "bullet deleted bo colliding na enemy";
                 continue;
             }
+
+            //if player collided with an enemy(or fuel depot)
             if(typeid(*(colliding_items.at(j))) == typeid(Player)){
+                //if it was only fuel depot
                 if(enemies.at(i)->get_type() == 4)///fuel depot
                 {
                     fuel->increase();
                     qDebug() << "fuel depot!";
                     continue;
                 }
-                scene->removeItem(enemies.at(i));
-                delete enemies.at(i);
-                enemies.erase(enemies.begin()+i);
-                qDebug() << "player collided with enemy";
+                //if game over
+                else
+                {
+                    scene->removeItem(enemies.at(i));
+                    delete enemies.at(i);
+                    enemies.erase(enemies.begin()+i);
+                    qDebug() << "player collided with enemy";
+                    qDebug() << "****************************** GAME OVER ************************";
 
+                }
             }
          }
 
