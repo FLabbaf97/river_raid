@@ -7,6 +7,7 @@
 #include <typeinfo>
 #include <QThread>
 #include "bullet.h"
+#include <margin.h>
 
 controller::controller()
 {
@@ -17,6 +18,12 @@ controller::controller()
     player = new Player;
 //    player->setRect(0 , 0 , 100 , 50);
 
+    right_margin = new Margin();
+    left_margin = new Margin();
+    scene->addItem(right_margin);
+    scene->addItem(left_margin);
+    right_margin->setPos(700 , 0);
+    left_margin->setPos(-300 , 0);
     //creat score & fuel
     score = new Score;
     fuel = new Fuel;
@@ -53,8 +60,10 @@ controller::controller()
     show();
 }
 
-int controller::gameOver(int score)
+int controller::gameOver(/*int score*/)
 {
+    delete this;
+    return 0;
     //first disable evey thing inn game
     for(int i = 0; i < scene->items().size(); i++)
     {
@@ -70,15 +79,15 @@ int controller::gameOver(int score)
 
 void controller::create_enemy()
 {
-    int x = rand()%8;
-    qDebug() << x;
+    int x = rand()%4;
+//    qDebug() << x;
     QVector <enemy*> temp;
     for(int i = 0 ; i < x ; i++){
         enemy* enemy1 = new enemy(rand()%5);
         scene->addItem(enemy1);
         bool flag = false;
         for(int j = 0 ; j < temp.size() ; j++){
-            if(enemy1->collidesWithItem(temp[j])){
+            if(enemy1->collidesWithItem(temp[j]) || enemy1->collidesWithItem(right_margin) || enemy1->collidesWithItem(left_margin)){
                 scene->removeItem(enemy1);
                 delete enemy1;
                 flag = true;
@@ -94,9 +103,20 @@ void controller::create_enemy()
 
 void controller::routine()
 {
+    right_margin->setZValue(-1);
+    left_margin->setZValue(-1);
     player->setZValue(1);
     fuel->decrease();
-
+    if(player->collidesWithItem(right_margin)){
+        qDebug() << "player collided with margin";
+        qDebug() << "****************************** GAME OVER ************************";
+        gameOver(/*score->get_score()*/);
+    }
+    if(player->collidesWithItem(left_margin)){
+        qDebug() << "player collided with margin";
+        qDebug() << "****************************** GAME OVER ************************";
+        gameOver(/*score->get_score()*/);
+    }
 
     for(int i = 0; i < enemies.size() ; i++){
         if(enemies.at(i)->y() > 600){
@@ -137,13 +157,14 @@ void controller::routine()
                     enemies.erase(enemies.begin()+i);
                     qDebug() << "player collided with enemy";
                     qDebug() << "****************************** GAME OVER ************************";
-                    gameOver(score->get_score());
+                    gameOver(/*score->get_score()*/);
 
-                }
+                }    
             }
+
          }
-
     }
-
-
 }
+
+
+

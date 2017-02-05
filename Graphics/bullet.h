@@ -8,7 +8,6 @@ class Bullet : public QObject  , public QGraphicsRectItem
     static qreal rate ;
 public:
     Bullet();
-//    bool check_collision();
 public slots:
     void move();
 };

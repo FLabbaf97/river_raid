@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     score.cpp \
     Player.cpp \
     controller.cpp \
-    menu.cpp
+    menu.cpp \
+    margin.cpp
 
 HEADERS  += \
     bullet.h \
@@ -28,7 +29,8 @@ HEADERS  += \
     fuel.h \
     score.h \
     Player.h \
-    menu.h
+    menu.h \
+    margin.h
 
 RESOURCES += \
     resources.qrc

@@ -10,12 +10,17 @@
 #include <QVector>
 #include "fuel.h"
 #include <bullet.h>
+
+#include <margin.h>
+
 class controller : public QGraphicsView
 {
+
     Q_OBJECT
 public:
+     Margin* right_margin , *left_margin;
     controller();
-    int gameOver(int score);
+    int gameOver(/*int score*/);
     QGraphicsScene* scene;
     Player* player;
     QVector<enemy*> enemies;
