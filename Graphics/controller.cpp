@@ -21,10 +21,12 @@ controller::controller()
     fuel -> setPos(fuel->x() , fuel->y() + 25);
 
     //add items  to scen
-    scene->addItem(player);
+
     scene->addItem(score);
     scene->addItem(fuel);
-
+    scene->addItem(player);
+    //back ground us blue!
+    scene->setBackgroundBrush(* new QBrush(Qt::green));
     // set focus on player
     player->setFlag(QGraphicsRectItem:: ItemIsFocusable);
     player->setFocus();
@@ -66,7 +68,7 @@ void controller::routine()
                     scene->removeItem(enemies.at(i));
                     delete enemies.at(i);
                     enemies.erase(enemies.begin() + i);
-                    break;
+                    continue;
         }
         QList <QGraphicsItem* > colliding_items = enemies.at(i)->collidingItems();
         for(int j = 0; j < colliding_items.size(); j++){
@@ -80,14 +82,14 @@ void controller::routine()
                 enemies.erase(enemies.begin() + i);
                 qDebug() << "enemy deleted by a shot";
                 qDebug() << "bullet deleted bo colliding na enemy";
-                break;
+                continue;
             }
             if(typeid(*(colliding_items.at(j))) == typeid(Player)){
                 if(enemies.at(i)->get_type() == 4)///fuel depot
                 {
                     fuel->increase();
                     qDebug() << "fuel depot!";
-                    break;
+                    continue;
                 }
                 scene->removeItem(enemies.at(i));
                 delete enemies.at(i);
@@ -97,26 +99,6 @@ void controller::routine()
             }
          }
 
-//        if(enemies.at(i)->y() > 600){
-//            scene->removeItem(enemies.at(i));
-//            delete enemies.at(i);
-//            enemies.erase(enemies.begin() + i);
-//            break;
-//        }
-//        else if(enemies.at(i)->collidesWithItem(player)){
-
-//            if(enemies.at(i)->get_type() == 4){////was a fule depot
-//                fuel->increase();
-//                qDebug()<< "collision with fuel depot";
-//                break;
-//            }
-//            qDebug() << "collision with enemy";
-//            scene->removeItem(enemies.at(i));
-//            delete enemies.at(i);
-//            enemies.erase(enemies.begin() + i);
-
-//            break;
-//        }
     }
 
 

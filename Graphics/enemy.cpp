@@ -2,6 +2,7 @@
 #include<QDebug>
 #include <QTimer>
 #include <QGraphicsScene>
+#include <QGraphicsItem>
 #include <stdlib.h>
 
 int values[] = {60 , 30 , 60 , 100 , 150};
@@ -22,18 +23,20 @@ enemy::enemy(int t)
 
     val = values[(int)t];
     if(t == 0)
-        setBrush(*new QBrush(Qt::black));
-    else if(t == 1)
-        setBrush(*new QBrush(Qt::red));
+        this->setPixmap(QPixmap(":/images/fig/heli.png"));
+    if(t == 1)
+        this->setPixmap((QPixmap(":/images/fig/nave.png")));
     else if(t == 2)
-        setBrush(*new QBrush(Qt::blue));
+        this->setPixmap(QPixmap(":/images/fig/balloon.png"));
     else if(t == 3)
-        setBrush(*new QBrush(Qt::white));
+        this->setPixmap(QPixmap(":/images/fig/jet.png"));
     else
-        setBrush(*new QBrush(Qt::green));
+        this->setPixmap(QPixmap(":/images/fig/fuel.png"));
+
     // draw enemy
     int randomNum = rand() %  500;
-    setRect(randomNum , 0 , 100 , 100);
+    setPos(randomNum , 0);
+//    setRect(randomNum , 0 , 100 , 100);
     // we want it that every 50ms bullet move
 
     QTimer* timer = new QTimer();

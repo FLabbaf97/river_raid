@@ -10,7 +10,7 @@
 enum Type{helicopter , Nave , balloon , Jet , Fuel_depot};
 
 
-class enemy : public QObject ,  public QGraphicsRectItem
+class enemy : public QObject ,  public QGraphicsPixmapItem
 {
     Q_OBJECT
     int type;
