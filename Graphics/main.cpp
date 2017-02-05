@@ -1,12 +1,14 @@
 //#include "mainwindow.h"
 #include <QApplication>
 #include "controller.h"
+#include "menu.h"
 
 controller* control;
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    menu* mainMenu = new menu;
     control = new controller;
     control->show();
 

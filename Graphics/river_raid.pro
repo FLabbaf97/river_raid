@@ -18,7 +18,8 @@ SOURCES += main.cpp\
     fuel.cpp \
     score.cpp \
     Player.cpp \
-    controller.cpp
+    controller.cpp \
+    menu.cpp
 
 HEADERS  += \
     bullet.h \
@@ -26,7 +27,8 @@ HEADERS  += \
     enemy.h \
     fuel.h \
     score.h \
-    Player.h
+    Player.h \
+    menu.h
 
 RESOURCES += \
     resources.qrc
