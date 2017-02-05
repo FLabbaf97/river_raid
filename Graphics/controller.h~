@@ -16,7 +16,7 @@ class controller : public QGraphicsView
 public:
     controller();
     void start();
-    int gameOver(/*int score*/);
+    int gameOver(int score);
     QGraphicsScene* scene;
     Player* player;
     QVector<enemy*> enemies;

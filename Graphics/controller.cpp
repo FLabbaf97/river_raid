@@ -25,13 +25,20 @@ void controller::start()
     player = new Player;
 //    player->setRect(0 , 0 , 100 , 50);
 
+	// margins
+	right_margin = new Margin();
+    left_margin = new Margin();
+    scene->addItem(right_margin);
+    scene->addItem(left_margin);
+    right_margin->setPos(700 , 0);
+    left_margin->setPos(-300 , 0);
+    
     //creat score & fuel
     score = new Score;
     fuel = new Fuel;
     fuel -> setPos(fuel->x() , fuel->y() + 25);
 
     //add items  to scen
-
     scene->addItem(score);
     scene->addItem(fuel);
     scene->addItem(player);
@@ -89,7 +96,7 @@ void controller::create_enemy()
         scene->addItem(enemy1);
         bool flag = false;
         for(int j = 0 ; j < temp.size() ; j++){
-            if(enemy1->collidesWithItem(temp[j])){
+            if(enemy1->collidesWithItem(temp[j]) || enemy1->collidesWithItem(right_margin) || enemy1->collidesWithItem(left_margin)){
                 scene->removeItem(enemy1);
                 delete enemy1;
                 flag = true;
@@ -105,10 +112,26 @@ void controller::create_enemy()
 
 void controller::routine()
 {
+	//margins
+	right_margin->setZValue(-1);
+    left_margin->setZValue(-1);
+	//set player on top
     player->setZValue(1);
+    //decrease fuel
     fuel->decrease();
-
-
+    // check collision with margins
+    if(player->collidesWithItem(right_margin)){
+        qDebug() << "player collided with margin";
+        qDebug() << "****************************** GAME OVER ************************";
+        gameOver(/*score->get_score()*/);
+    }
+    if(player->collidesWithItem(left_margin)){
+        qDebug() << "player collided with margin";
+        qDebug() << "****************************** GAME OVER ************************";
+        gameOver(/*score->get_score()*/);
+    }
+	
+	//check enemies collision and delete enemies if they get out :-?
     for(int i = 0; i < enemies.size() ; i++){
         if(enemies.at(i)->y() > 600){
                     scene->removeItem(enemies.at(i));
