@@ -3,6 +3,7 @@
 
 #include <QDebug>
 #include <QObject>
+#include <QTimer>
 #include <QGraphicsRectItem>
 #include <QGraphicsItem>
 #include <QGraphicsPixmapItem>
@@ -17,6 +18,7 @@ class enemy : public QObject ,  public QGraphicsPixmapItem
     int type;
     int val;
 public:
+    QTimer* move_timer;
     int getval();
     int get_type();
     enemy(int);

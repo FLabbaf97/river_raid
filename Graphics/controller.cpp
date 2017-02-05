@@ -7,8 +7,16 @@
 #include <typeinfo>
 #include <QThread>
 #include "bullet.h"
+#include <QPushButton>
 
+QTimer* creat_enemy_timer ;
+QTimer* routin_timer;
 controller::controller()
+{
+    start();
+}
+
+void controller::start()
 {
     //creat scene
     scene = new QGraphicsScene;
@@ -44,28 +52,31 @@ controller::controller()
 
 
    // creat enemy every 2 seconds
-    QTimer* timer2 = new QTimer;
-    controller::connect(timer2 , SIGNAL(timeout()) ,this , SLOT(create_enemy()));
-    timer2->start(2000);
-    QTimer* timer3 = new QTimer;
-    controller::connect(timer3 , SIGNAL(timeout()) , this , SLOT(routine()));
-    timer3->start(50);
+    creat_enemy_timer = new QTimer;
+    controller::connect(creat_enemy_timer , SIGNAL(timeout()) ,this , SLOT(create_enemy()));
+    creat_enemy_timer->start(2000);
+    routin_timer = new QTimer;
+    controller::connect(routin_timer , SIGNAL(timeout()) , this , SLOT(routine()));
+    routin_timer->start(50);
     show();
 }
 
 int controller::gameOver(int score)
 {
-    //first disable evey thing inn game
-    for(int i = 0; i < scene->items().size(); i++)
-    {
-        if(typeid(*scene->items()[i]) == typeid(enemy)){
-        scene->items()[i]->setEnabled(false);
-        scene->removeItem(scene->items()[i]);
-        qDebug() << " enemy disabled";
-//        delete scene->items()[i];
-        }
+    for(int i = 0; i < scene->items().size(); i++){
+//        if(typeid(*(scene->items()[i])) == typeid(enemy)){
+//            enemy* tmp_enemy = scene->items()[i];
+//            tmp_enemy ->move_timer->blockSignsl(true);
+//        }
     }
+    player->setEnabled(false);
         QThread::sleep(5);
+        //stop creating and moving enemies
+        creat_enemy_timer->blockSignals(true);
+        routin_timer->blockSignals(true);
+        // creatr buttons of play again & exit
+        QPushButton* playAgain = new QPushButton("Try Again");
+        QPushButton* quit = new QPushButton("Quit");
 }
 
 void controller::create_enemy()
@@ -142,8 +153,5 @@ void controller::routine()
                 }
             }
          }
-
     }
-
-
 }

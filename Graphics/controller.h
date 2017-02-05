@@ -15,6 +15,7 @@ class controller : public QGraphicsView
     Q_OBJECT
 public:
     controller();
+    void start();
     int gameOver(int score);
     QGraphicsScene* scene;
     Player* player;

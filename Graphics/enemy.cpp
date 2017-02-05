@@ -40,10 +40,10 @@ enemy::enemy(int t)
 //    setRect(randomNum , 0 , 100 , 100);
     // we want it that every 50ms bullet move
 
-    QTimer* timer = new QTimer();
+    move_timer = new QTimer();
 
-    connect (timer , SIGNAL(timeout()) , this , SLOT(move()));
-    timer->start(50);
+    connect (move_timer , SIGNAL(timeout()) , this , SLOT(move()));
+    move_timer->start(50);
 }
 
 void enemy::move()
