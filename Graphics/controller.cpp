@@ -68,7 +68,7 @@ void controller::start()
     show();
 }
 
-int controller::gameOver(int score)
+int controller::gameOver(/*int score*/)
 {
     for(int i = 0; i < scene->items().size(); i++){
 //        if(typeid(*(scene->items()[i])) == typeid(enemy)){
@@ -171,7 +171,7 @@ void controller::routine()
                     enemies.erase(enemies.begin()+i);
                     qDebug() << "player collided with enemy";
                     qDebug() << "****************************** GAME OVER ************************";
-                    gameOver(score->get_score());
+                    gameOver(/*score->get_score()*/);
 
                 }
             }

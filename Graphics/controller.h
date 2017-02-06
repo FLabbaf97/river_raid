@@ -10,6 +10,8 @@
 #include <QVector>
 #include "fuel.h"
 #include <bullet.h>
+#include "margin.h"
+
 class controller : public QGraphicsView
 {
     Q_OBJECT
@@ -22,6 +24,8 @@ public:
     QVector<enemy*> enemies;
     Score* score;
     Fuel* fuel;
+    Margin* right_margin;
+    Margin* left_margin;
 
 public slots:
     void create_enemy();
