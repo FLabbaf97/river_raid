@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>fig/airplane.png</file>
+        <file>fig/fuel.png</file>
+        <file>fig/screenshot_1f9-river-raid-fly-over-fuel-depots-to-replenish-your-fuel-supply.png</file>
+        <file>fig/airplane2.png</file>
+        <file>fig/heli.png</file>
+        <file>fig/nave.png</file>
+        <file>fig/balloon.png</file>
+        <file>fig/jet.png</file>
+        <file>fig/chaman.png</file>
+    </qresource>
+</RCC>
