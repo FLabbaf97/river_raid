@@ -18,7 +18,7 @@ class controller : public QGraphicsView
 public:
     controller();
     void start();
-    int gameOver(/*int score*/);
+    void gameOver(/*int score*/);
     QGraphicsScene* scene;
     Player* player;
     QVector<enemy*> enemies;
@@ -26,6 +26,8 @@ public:
     Fuel* fuel;
     Margin* right_margin;
     Margin* left_margin;
+    QGraphicsView* view;
+    ~controller();
 
 public slots:
     void create_enemy();

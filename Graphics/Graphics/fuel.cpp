@@ -5,7 +5,7 @@
 
 Fuel::Fuel(QGraphicsItem* parent) : QGraphicsTextItem(parent)
 {
-    fuel = 1000;
+    fuel = 500;
     // draw
     setPlainText(QString("FUEL: ") + QString :: number(fuel));
     setDefaultTextColor(Qt :: red);
@@ -14,10 +14,10 @@ Fuel::Fuel(QGraphicsItem* parent) : QGraphicsTextItem(parent)
 
 void Fuel::increase()
 {
-    if(fuel + FUELNUMBER <= 1000)
+    if(fuel + FUELNUMBER <= 500)
         fuel += FUELNUMBER;
     else
-        fuel = 1000;
+        fuel = 500;
     setPlainText(QString("FUEL: ") + QString :: number(fuel));
 }
 

@@ -7,8 +7,10 @@ controller* control;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-//    menu* mainMenu = new menu;
-    control = new controller;
+//    menu* mainMenu = new menu();
+//    mainMenu->show();
+
+    control = new controller();
     control->show();
 
     return a.exec();

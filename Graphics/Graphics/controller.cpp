@@ -50,7 +50,7 @@ void controller::start()
     player->setFocus();
 
     // add to view
-    QGraphicsView* view = new QGraphicsView(scene);
+    view = new QGraphicsView(scene);
 
 
     // fix the view and set position of player
@@ -66,10 +66,10 @@ void controller::start()
     routin_timer = new QTimer;
     controller::connect(routin_timer , SIGNAL(timeout()) , this , SLOT(routine()));
     routin_timer->start(50);
-    show();
+//    show();
 }
 
-int controller::gameOver(/*int score*/)
+void controller::gameOver(/*int score*/)
 {
     for(int i = 0; i < enemies.size(); i++){
         enemies[i]->move_timer->blockSignals(true);
@@ -82,9 +82,34 @@ int controller::gameOver(/*int score*/)
         routin_timer->blockSignals(true);
 
         // creatr buttons of play again & exit
-        QPushButton* playAgain = new QPushButton("Try Again");
-        QPushButton* quit = new QPushButton("Quit");
+//        QPushButton* playAgain = new QPushButton("Try Again");
+//        QPushButton* quit = new QPushButton("Quit");
+        QThread::sleep(1);
+    delete this;
+
 }
+
+controller::~controller()
+{
+    for(int i = 0 ; i < enemies.size() ; i++){
+        scene->removeItem(enemies[i]);
+        delete enemies[i];
+    }
+    scene->removeItem(player);
+    delete player;
+    scene->removeItem(score);
+    scene->removeItem(fuel);
+    delete score;
+    delete fuel;
+    scene->removeItem(right_margin);
+    scene->removeItem(left_margin);
+    delete right_margin;
+    delete left_margin;
+    delete scene;
+    delete view;
+}
+
+
 
 void controller::create_enemy()
 {
@@ -113,6 +138,8 @@ void controller::create_enemy()
 
 void controller::routine()
 {
+    if(fuel->get_fuel() <= 0)
+        gameOver();
 	score->setZValue(1);
 	fuel->setZValue(1);
     player->setZValue(1);
