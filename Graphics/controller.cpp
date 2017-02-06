@@ -7,16 +7,9 @@
 #include <typeinfo>
 #include <QThread>
 #include "bullet.h"
-#include <QPushButton>
+#include <margin.h>
 
-QTimer* creat_enemy_timer ;
-QTimer* routin_timer;
 controller::controller()
-{
-    start();
-}
-
-void controller::start()
 {
     //creat scene
     scene = new QGraphicsScene;
@@ -25,20 +18,19 @@ void controller::start()
     player = new Player;
 //    player->setRect(0 , 0 , 100 , 50);
 
-	// margins
-	right_margin = new Margin();
+    right_margin = new Margin();
     left_margin = new Margin();
     scene->addItem(right_margin);
     scene->addItem(left_margin);
     right_margin->setPos(700 , 0);
     left_margin->setPos(-300 , 0);
-    
     //creat score & fuel
     score = new Score;
     fuel = new Fuel;
     fuel -> setPos(fuel->x() , fuel->y() + 25);
 
     //add items  to scen
+
     scene->addItem(score);
     scene->addItem(fuel);
     scene->addItem(player);
@@ -59,37 +51,36 @@ void controller::start()
 
 
    // creat enemy every 2 seconds
-    creat_enemy_timer = new QTimer;
-    controller::connect(creat_enemy_timer , SIGNAL(timeout()) ,this , SLOT(create_enemy()));
-    creat_enemy_timer->start(2000);
-    routin_timer = new QTimer;
-    controller::connect(routin_timer , SIGNAL(timeout()) , this , SLOT(routine()));
-    routin_timer->start(50);
+    QTimer* timer2 = new QTimer;
+    controller::connect(timer2 , SIGNAL(timeout()) ,this , SLOT(create_enemy()));
+    timer2->start(2000);
+    QTimer* timer3 = new QTimer;
+    controller::connect(timer3 , SIGNAL(timeout()) , this , SLOT(routine()));
+    timer3->start(50);
     show();
 }
 
 int controller::gameOver(/*int score*/)
 {
-    for(int i = 0; i < scene->items().size(); i++){
-//        if(typeid(*(scene->items()[i])) == typeid(enemy)){
-//            enemy* tmp_enemy = scene->items()[i];
-//            tmp_enemy ->move_timer->blockSignsl(true);
+    delete this;
+    return 0;
+//    //first disable evey thing inn game
+//    for(int i = 0; i < scene->items().size(); i++)
+//    {
+//        if(typeid(*scene->items()[i]) == typeid(enemy)){
+//        scene->items()[i]->setEnabled(false);
+//        scene->removeItem(scene->items()[i]);
+//        qDebug() << " enemy disabled";
+////        delete scene->items()[i];
 //        }
-    }
-    player->setEnabled(false);
-        QThread::sleep(5);
-        //stop creating and moving enemies
-        creat_enemy_timer->blockSignals(true);
-        routin_timer->blockSignals(true);
-        // creatr buttons of play again & exit
-        QPushButton* playAgain = new QPushButton("Try Again");
-        QPushButton* quit = new QPushButton("Quit");
+//    }
+//        QThread::sleep(5);
 }
 
 void controller::create_enemy()
 {
-    int x = rand()%8;
-    qDebug() << x;
+    int x = rand()%4;
+//    qDebug() << x;
     QVector <enemy*> temp;
     for(int i = 0 ; i < x ; i++){
         enemy* enemy1 = new enemy(rand()%5);
@@ -112,14 +103,12 @@ void controller::create_enemy()
 
 void controller::routine()
 {
-	//margins
-	right_margin->setZValue(-1);
+    score->setZValue(1);
+    fuel->setZValue(1);
+    right_margin->setZValue(-1);
     left_margin->setZValue(-1);
-	//set player on top
     player->setZValue(1);
-    //decrease fuel
     fuel->decrease();
-    // check collision with margins
     if(player->collidesWithItem(right_margin)){
         qDebug() << "player collided with margin";
         qDebug() << "****************************** GAME OVER ************************";
@@ -130,8 +119,7 @@ void controller::routine()
         qDebug() << "****************************** GAME OVER ************************";
         gameOver(/*score->get_score()*/);
     }
-	
-	//check enemies collision and delete enemies if they get out :-?
+
     for(int i = 0; i < enemies.size() ; i++){
         if(enemies.at(i)->y() > 600){
                     scene->removeItem(enemies.at(i));
@@ -173,8 +161,12 @@ void controller::routine()
                     qDebug() << "****************************** GAME OVER ************************";
                     gameOver(/*score->get_score()*/);
 
-                }
+                }    
             }
+
          }
     }
 }
+
+
+
